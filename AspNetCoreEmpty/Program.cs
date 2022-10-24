@@ -1,7 +1,13 @@
 //using Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore;
 
+using AspNetCoreEmpty.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddScoped<IPieRepository, MockPieRepository>();
+builder.Services.AddScoped<ICategoryRepository, MockCategoryRepository>();
+
 var app = builder.Build();
 
 
@@ -25,6 +31,7 @@ app.UseRouting();
 
 
 //app.MapGet("/", () => "Hello World!");
+
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
