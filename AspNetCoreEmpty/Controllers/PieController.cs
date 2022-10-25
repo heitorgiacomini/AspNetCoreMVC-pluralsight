@@ -1,4 +1,5 @@
 ﻿using AspNetCoreEmpty.Models;
+using AspNetCoreEmpty.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AspNetCoreEmpty.Controllers
@@ -20,7 +21,10 @@ namespace AspNetCoreEmpty.Controllers
 
         public ViewResult List()
         {
-            return View(_pieRepository.Pies);
+            PiesListViewModel piesListViewModel = new PiesListViewModel();
+            piesListViewModel.CurrentCategory = "Cheese cakes";
+            piesListViewModel.Pies = _pieRepository.Pies;
+            return View(piesListViewModel);
         }
     }
 }
