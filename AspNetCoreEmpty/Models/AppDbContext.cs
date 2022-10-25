@@ -36,7 +36,8 @@ namespace AspNetCoreEmpty.Models
                 InStock = true,
                 IsPieOfTheWeek = true,
                 ImageThumbnailUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/applepiesmall.jpg",
-                AllergyInformation = ""
+                AllergyInformation = "",
+                Notes = ""
             });
 
             modelBuilder.Entity<Pie>().HasData(new Pie
@@ -53,7 +54,8 @@ namespace AspNetCoreEmpty.Models
                 IsPieOfTheWeek = false,
                 ImageThumbnailUrl =
                     "https://gillcleerenpluralsight.blob.core.windows.net/files/blueberrycheesecakesmall.jpg",
-                AllergyInformation = ""
+                AllergyInformation = "",
+                Notes = ""
             });
 
             modelBuilder.Entity<Pie>().HasData(new Pie
@@ -69,7 +71,8 @@ namespace AspNetCoreEmpty.Models
                 InStock = true,
                 IsPieOfTheWeek = false,
                 ImageThumbnailUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/cheesecakesmall.jpg",
-                AllergyInformation = ""
+                AllergyInformation = "",
+                Notes = ""
             });
 
             modelBuilder.Entity<Pie>().HasData(new Pie
@@ -85,7 +88,8 @@ namespace AspNetCoreEmpty.Models
                 InStock = true,
                 IsPieOfTheWeek = false,
                 ImageThumbnailUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/cherrypiesmall.jpg",
-                AllergyInformation = ""
+                AllergyInformation = "",
+                Notes = ""
             });
 
             modelBuilder.Entity<Pie>().HasData(new Pie
@@ -102,7 +106,8 @@ namespace AspNetCoreEmpty.Models
                 IsPieOfTheWeek = false,
                 ImageThumbnailUrl =
                     "https://gillcleerenpluralsight.blob.core.windows.net/files/christmasapplepiesmall.jpg",
-                AllergyInformation = ""
+                AllergyInformation = "",
+                Notes = ""
             });
 
             modelBuilder.Entity<Pie>().HasData(new Pie
@@ -118,7 +123,8 @@ namespace AspNetCoreEmpty.Models
                 InStock = true,
                 IsPieOfTheWeek = false,
                 ImageThumbnailUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/cranberrypiesmall.jpg",
-                AllergyInformation = ""
+                AllergyInformation = "",
+                Notes = ""
             });
 
             modelBuilder.Entity<Pie>().HasData(new Pie
@@ -134,7 +140,8 @@ namespace AspNetCoreEmpty.Models
                 InStock = false,
                 IsPieOfTheWeek = false,
                 ImageThumbnailUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/peachpiesmall.jpg",
-                AllergyInformation = ""
+                AllergyInformation = "",
+                Notes = ""
             });
 
             modelBuilder.Entity<Pie>().HasData(new Pie
@@ -150,7 +157,8 @@ namespace AspNetCoreEmpty.Models
                 InStock = true,
                 IsPieOfTheWeek = true,
                 ImageThumbnailUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/pumpkinpiesmall.jpg",
-                AllergyInformation = ""
+                AllergyInformation = "",
+                Notes = ""
             });
 
 
@@ -167,7 +175,8 @@ namespace AspNetCoreEmpty.Models
                 InStock = true,
                 IsPieOfTheWeek = true,
                 ImageThumbnailUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/rhubarbpiesmall.jpg",
-                AllergyInformation = ""
+                AllergyInformation = "",
+                Notes = ""
             });
 
             modelBuilder.Entity<Pie>().HasData(new Pie
@@ -183,7 +192,8 @@ namespace AspNetCoreEmpty.Models
                 InStock = true,
                 IsPieOfTheWeek = false,
                 ImageThumbnailUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/strawberrypiesmall.jpg",
-                AllergyInformation = ""
+                AllergyInformation = "",
+                Notes = ""
             });
 
             modelBuilder.Entity<Pie>().HasData(new Pie
@@ -200,7 +210,8 @@ namespace AspNetCoreEmpty.Models
                 IsPieOfTheWeek = false,
                 ImageThumbnailUrl =
                     "https://gillcleerenpluralsight.blob.core.windows.net/files/strawberrycheesecakesmall.jpg",
-                AllergyInformation = ""
+                AllergyInformation = "",
+                Notes = ""
             });
         }
 
