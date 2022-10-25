@@ -1,8 +1,15 @@
 //using Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore;
 
 using AspNetCoreEmpty.Models;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+string connString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(connString));
+
+
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IPieRepository, MockPieRepository>();
