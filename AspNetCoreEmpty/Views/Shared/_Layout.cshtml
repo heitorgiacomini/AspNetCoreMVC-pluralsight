@@ -8,9 +8,31 @@
     <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
     <script src="~/lib/jquery/jquery.js"></script>
     <script src="~/lib/bootstrap/js/bootstrap.js"></script>
-    <link href="~/Content/site.css" rel="stylesheet" /> I
+    <link href="~/Content/site.css" rel="stylesheet" /> 
 </head>
 <body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Home</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li><a asp-controller="Pie" asp-action="List">Pies</a></li> 
+                </ul>
+            </div>
+        </div>
+    </nav> 
+
+
+
+
+
+
+
+
+
     <div class="container">
         <div class="row">
             <div class="col-md-3">
