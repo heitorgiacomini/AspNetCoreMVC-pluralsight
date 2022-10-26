@@ -1,14 +1,26 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AspNetCoreEmpty.Models;
+using AspNetCoreEmpty.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AspNetCoreEmpty.Controllers
 {
     public class HomeController : Controller
     {
-        // GET: HomeController
+        private readonly IPieRepository _pieRepository;
+
+        public HomeController(IPieRepository pieRepository)
+        {
+            _pieRepository = pieRepository;
+        }
+
+        // GET: HomeController 
         public ActionResult Index()
         {
-            return View();
+            var homeViewModel = new HomeViewModel
+            {
+                PiesOfTheWeek = _pieRepository.PiesOfTheWeek
+            };
+            return View(homeViewModel);
         }
 
         // GET: HomeController/Details/5

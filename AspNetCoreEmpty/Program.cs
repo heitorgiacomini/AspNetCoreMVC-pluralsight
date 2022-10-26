@@ -41,7 +41,9 @@ app.UseRouting();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Pie}/{action=List}/{id?}");
+    pattern: "{controller=Home}/{action=Index}"
+//pattern: "{controller=Home}/{action=Index}/{id?}"
+);
 
 app.Run();
 
