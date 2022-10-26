@@ -31,13 +31,13 @@ body {
 }
 
 .caption {
-    height: 130px;
+    /*height: 130px;*/
     overflow: hidden;
 }
 
-    .caption h4 {
-        white-space: nowrap;
-    }
+.caption h4 {
+    white-space: nowrap;
+}
 
 .thumbnail img {
     width: 100%;
@@ -101,4 +101,3 @@ footer {
     background-color: #fcaeae !important;
     border-color: #fba1a1 !important;
 }
-

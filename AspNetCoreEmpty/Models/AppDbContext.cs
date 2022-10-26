@@ -10,6 +10,7 @@ namespace AspNetCoreEmpty.Models
 
         public DbSet<Pie> Pie { get; set; }
         public DbSet<Category> Category { get; set; }
+        public DbSet<ShoppingCartItem> ShoppingCartItem { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
