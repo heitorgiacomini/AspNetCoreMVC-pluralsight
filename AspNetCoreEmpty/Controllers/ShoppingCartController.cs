@@ -22,7 +22,7 @@ namespace AspNetCoreEmpty.Controllers
         public ViewResult Index()
         {
             var items = _shoppingCart.GetShoppingCartItem();
-            _shoppingCart.ShoppingCartItem = items;
+            _shoppingCart.ShoppingCartItems = items;
 
             var shoppingCartViewModel = new ShoppingCartViewModel
             {

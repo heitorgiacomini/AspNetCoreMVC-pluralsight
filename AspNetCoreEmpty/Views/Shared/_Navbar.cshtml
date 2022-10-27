@@ -1,4 +1,20 @@
-﻿<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+﻿<style>
+    .navbar{
+        position: fixed;
+    }
+    .navbar-nav{
+        align-items: center;
+    }
+
+    .navbar-nav > li{
+        margin-right: 10px;
+    }
+
+
+</style>
+
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
         <a class="navbar-brand" asp-controller="Home" asp-action="Index">Home</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -6,7 +22,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-                <li><a asp-controller="Pie" asp-action="List">Pies</a></li>
+                @*<li><a asp-controller="Pie" asp-action="List">Pies</a></li>*@
+                @await Component.InvokeAsync("CategoryMenu")
+                @await Component.InvokeAsync("ShoppingCartSummary")
+
             </ul>
         </div>
     </div>

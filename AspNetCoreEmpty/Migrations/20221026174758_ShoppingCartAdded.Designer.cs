@@ -286,7 +286,7 @@ namespace AspNetCoreEmpty.Migrations
                         });
                 });
 
-            modelBuilder.Entity("AspNetCoreEmpty.Models.ShoppingCartItem", b =>
+            modelBuilder.Entity("AspNetCoreEmpty.Models.ShoppingCartItems", b =>
                 {
                     b.Property<int>("ShoppingCartItemId")
                         .ValueGeneratedOnAdd()
@@ -308,7 +308,7 @@ namespace AspNetCoreEmpty.Migrations
 
                     b.HasIndex("PieId");
 
-                    b.ToTable("ShoppingCartItem");
+                    b.ToTable("ShoppingCartItems");
                 });
 
             modelBuilder.Entity("AspNetCoreEmpty.Models.Pie", b =>
@@ -322,7 +322,7 @@ namespace AspNetCoreEmpty.Migrations
                     b.Navigation("Category");
                 });
 
-            modelBuilder.Entity("AspNetCoreEmpty.Models.ShoppingCartItem", b =>
+            modelBuilder.Entity("AspNetCoreEmpty.Models.ShoppingCartItems", b =>
                 {
                     b.HasOne("AspNetCoreEmpty.Models.Pie", "Pie")
                         .WithMany()

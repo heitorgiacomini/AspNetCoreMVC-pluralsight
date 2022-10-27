@@ -12,7 +12,7 @@ namespace AspNetCoreEmpty.Models
 
         public string ShoppingCartId { get; set; }
 
-        public List<ShoppingCartItem> ShoppingCartItem { get; set; }
+        public List<ShoppingCartItem> ShoppingCartItems { get; set; }
 
         public static ShoppingCart GetCart(IServiceProvider services)
         {
@@ -79,8 +79,8 @@ namespace AspNetCoreEmpty.Models
 
         public List<ShoppingCartItem> GetShoppingCartItem()
         {
-            return ShoppingCartItem ??
-                   (ShoppingCartItem =
+            return ShoppingCartItems ??
+                   (ShoppingCartItems =
                        _appDbContext.ShoppingCartItem.Where(c => c.ShoppingCartId == ShoppingCartId)
                            .Include(s => s.Pie)
                            .ToList());

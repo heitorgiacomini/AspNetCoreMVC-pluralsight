@@ -9,7 +9,7 @@ namespace AspNetCoreEmpty.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "ShoppingCartItem",
+                name: "ShoppingCartItems",
                 columns: table => new
                 {
                     ShoppingCartItemId = table.Column<int>(type: "int", nullable: false)
@@ -31,14 +31,14 @@ namespace AspNetCoreEmpty.Migrations
 
             migrationBuilder.CreateIndex(
                 name: "IX_ShoppingCartItem_PieId",
-                table: "ShoppingCartItem",
+                table: "ShoppingCartItems",
                 column: "PieId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "ShoppingCartItem");
+                name: "ShoppingCartItems");
         }
     }
 }
