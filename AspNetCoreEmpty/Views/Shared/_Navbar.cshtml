@@ -23,6 +23,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 @await Component.InvokeAsync("CategoryMenu")
+                <a asp-controller="Contact" asp-action="Index">Contact</a>
                 @await Component.InvokeAsync("ShoppingCartSummary")
 
             </ul>
