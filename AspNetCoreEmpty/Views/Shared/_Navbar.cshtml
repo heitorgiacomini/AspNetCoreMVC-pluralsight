@@ -22,7 +22,6 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-                @*<li><a asp-controller="Pie" asp-action="List">Pies</a></li>*@
                 @await Component.InvokeAsync("CategoryMenu")
                 @await Component.InvokeAsync("ShoppingCartSummary")
 
