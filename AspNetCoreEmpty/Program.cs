@@ -1,16 +1,21 @@
 //using Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore;
 
 using AspNetCoreEmpty.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 string connString = builder.Configuration.GetConnectionString("DefaultConnection");
+
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(connString));
 
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
+    .AddEntityFrameworkStores<AppDbContext>();
 
-builder.Services.AddControllersWithViews();
+//builder.Services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<AppDbContext>();
+
 
 builder.Services.AddScoped<IPieRepository, PieRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
@@ -20,9 +25,10 @@ builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddSession();
 
-var app = builder.Build();
+builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages();
 
-app.UseSession();
+var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
@@ -37,11 +43,11 @@ else
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+app.UseSession();
 
 app.UseRouting();
 app.UseAuthentication();
-
-
+app.UseAuthorization();
 
 
 //app.MapGet("/", () => "Hello World!");
@@ -51,6 +57,8 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}"
 //pattern: "{controller=Home}/{action=Index}/{id?}"
 );
+
+app.MapRazorPages();
 
 app.Run();
 

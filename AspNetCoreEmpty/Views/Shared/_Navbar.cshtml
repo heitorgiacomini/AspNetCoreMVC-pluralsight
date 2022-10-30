@@ -25,8 +25,9 @@
                 @await Component.InvokeAsync("CategoryMenu")
                 <a asp-controller="Contact" asp-action="Index">Contact</a>
                 @await Component.InvokeAsync("ShoppingCartSummary")
-
+                <partial name="_LoginPartial" />
             </ul>
         </div>
     </div>
 </nav> 
+@RenderSection("Scripts", required: false)

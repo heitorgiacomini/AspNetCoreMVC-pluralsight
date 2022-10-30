@@ -18,8 +18,39 @@
 </head>
 <body>
     
-    <partial name="_Navbar"/>
+    @*<partial name="_Navbar"/>*@
+    <style>
+        .navbar {
+            position: fixed;
+        }
 
+        .navbar-nav {
+            align-items: center;
+        }
+
+            .navbar-nav > li {
+                margin-right: 10px;
+            }
+
+    </style>
+
+
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" asp-controller="Home" asp-action="Index">Home</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    @await Component.InvokeAsync("CategoryMenu")
+                    <a asp-controller="Contact" asp-action="Index">Contact</a>
+                    @await Component.InvokeAsync("ShoppingCartSummary")
+                    <partial name="_LoginPartial" />
+                </ul>
+            </div>
+        </div>
+    </nav>
     <div class="container">
         <div class="row">
             <div class="col-md-3">
@@ -32,5 +63,6 @@
             </div>
         </div>
     </div>
+    @RenderSection("Scripts", required: false)
 </body>
 </html>
