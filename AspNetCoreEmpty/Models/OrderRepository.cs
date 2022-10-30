@@ -17,11 +17,15 @@
 
         public void CreateOrder(Order order)
         {
+
+
             order.OrderPlaced = DateTime.Now;
 
-            _appDbContext.Order.Add(order);
-
             var shoppingCartItems = _shoppingCart.ShoppingCartItems;
+
+            order.OrderTotal = _shoppingCart.GetShoppingCartTotal();
+
+            order.OrderDetails = new List<OrderDetail>();
 
             foreach (var item in shoppingCartItems)
             {
@@ -29,12 +33,14 @@
                 {
                     Amount = item.Amount,
                     PieId = item.Pie.PieId,
-                    OrderId = order.OrderId,
+                    //OrderId = order.OrderId,
                     Price = item.Pie.Price
                 };
 
-                _appDbContext.OrderDetail.Add(orderDetail);
+                order.OrderDetails.Add(orderDetail);
             }
+
+            _appDbContext.Order.Add(order);
 
             _appDbContext.SaveChanges();
 
