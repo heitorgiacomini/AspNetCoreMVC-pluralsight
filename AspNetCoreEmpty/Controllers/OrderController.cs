@@ -1,8 +1,10 @@
 ﻿using AspNetCoreEmpty.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AspNetCoreEmpty.Controllers
 {
+    [Authorize]
     public class OrderController : Controller
     {
         private readonly AppDbContext _appDbContext;
